@@ -1,0 +1,102 @@
+<script>
+  const spotData = [
+    {
+      name: "桂浜",
+      category: "nature",
+      img: "https://upload.wikimedia.org/wikipedia/commons/6/63/Katsurahama.jpg",
+      text: "坂本龍馬像と太平洋が広がる高知を代表する海岸。"
+    },
+    {
+      name: "四万十川",
+      category: "nature",
+      img: "https://upload.wikimedia.org/wikipedia/commons/5/5c/Shimanto_River.jpg",
+      text: "日本最後の清流。沈下橋と里山の風景が魅力。"
+    },
+    {
+      name: "足摺岬",
+      category: "nature",
+      img: "https://upload.wikimedia.org/wikipedia/commons/4/4e/Ashizuri_Cape.jpg",
+      text: "四国最南端。灯台からの大パノラマは圧巻。"
+    },
+    {
+      name: "柏島",
+      category: "nature",
+      img: "https://upload.wikimedia.org/wikipedia/commons/e/e4/Kashiwajima.jpg",
+      text: "日本とは思えない透明度の海で有名な秘境。"
+    },
+    {
+      name: "安居渓谷",
+      category: "nature",
+      img: "https://upload.wikimedia.org/wikipedia/commons/7/78/Yasui_Valley.jpg",
+      text: "仁淀ブルーを代表する渓谷。光の入り方で色が変わる。"
+    },
+    {
+      name: "高知城",
+      category: "history",
+      img: "https://upload.wikimedia.org/wikipedia/commons/9/9b/Kochi_Castle.jpg",
+      text: "現存天守を持つ貴重な城。城下町の雰囲気も残る。"
+    },
+    {
+      name: "坂本龍馬記念館",
+      category: "history",
+      img: "https://upload.wikimedia.org/wikipedia/commons/8/8b/Sakamoto_Ryoma_Museum.jpg",
+      text: "龍馬の生涯と思想を学べる高知屈指の資料館。"
+    },
+    {
+      name: "竹林寺",
+      category: "history",
+      img: "https://upload.wikimedia.org/wikipedia/commons/0/0d/Chikurinji.jpg",
+      text: "四国八十八箇所霊場のひとつ。静かな名刹。"
+    },
+    {
+      name: "牧野植物園",
+      category: "nature",
+      img: "https://upload.wikimedia.org/wikipedia/commons/3/3c/Makino_Botanical_Garden.jpg",
+      text: "植物学者・牧野富太郎博士ゆかりの植物園。"
+    },
+    {
+      name: "日曜市",
+      category: "culture",
+      img: "https://upload.wikimedia.org/wikipedia/commons/1/1f/Kochi_Sunday_Market.jpg",
+      text: "300年以上続く青空市。地元の食と人情が魅力。"
+    },
+    {
+      name: "室戸岬",
+      category: "nature",
+      img: "https://upload.wikimedia.org/wikipedia/commons/6/69/Muroto_Cape.jpg",
+      text: "ダイナミックな海岸地形と世界ジオパーク。"
+    },
+    {
+      name: "佐田沈下橋",
+      category: "nature",
+      img: "https://upload.wikimedia.org/wikipedia/commons/2/2a/Sada_Chinkabashi.jpg",
+      text: "四万十川最下流で最長の沈下橋。写真映え抜群。"
+    }
+  ];
+
+  const container = document.getElementById("spots");
+
+  function displaySpots(data) {
+    container.innerHTML = "";
+    data.forEach(spot => {
+      container.innerHTML += `
+        <div class="card">
+          <img src="${spot.img}" alt="${spot.name}">
+          <h3>${spot.name}</h3>
+          <p>${spot.text}</p>
+        </div>
+      `;
+    });
+  }
+
+  function filterSpot(category) {
+    const filtered = spotData.filter(s => s.category === category);
+    displaySpots(filtered);
+  }
+
+  function showAll() {
+    displaySpots(spotData);
+  }
+
+  showAll();
+</script>
